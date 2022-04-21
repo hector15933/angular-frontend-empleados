@@ -1,0 +1,117 @@
+<body class="swal2-shown swal2-height-auto" style="">
+
+    <div class="container-fluid">
+
+
+
+        <div class="row" style="height: 100vh;">
+
+            <!--  div class="col-md-8">
+			<img class="navbar-brand-full"
+			th:src="@{'../uploads/' + ${empresaLogo}}" width="200px"
+			alt="CoreUI Logo" >
+			
+			</div-->
+            <div class="col-md-8 col-lg-9 hidden-sm hidden-xs" style="padding: 0; height: 100vh;">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <!-- Wrapper for slides -->
+
+                    <div class="carousel-inner" style="padding: 0; height: 100vh;">
+                        <div class="carousel-item active">
+                            <img class="img-fluid" src="../../assets/img/banner_login01.png" alt="First"
+                                style="padding: 0; height: 100vh;">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="img-fluid" src="../../assets/img/banner_login02.jpg" alt="First"
+                                style="padding: 0; height: 100vh;">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="img-fluid" src="../../assets/img/banner_login03.jpg" alt="First"
+                                style="padding: 0; height: 100vh;">
+                        </div>
+
+
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
+                            data-bs-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </a> <a class="carousel-control-next" href="#carouselExampleControls" role="button"
+                            data-bs-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3" style="padding: 0; height: 100vh; overflow: auto; background-color: #fff;">
+
+                <div class="header_empresa">
+                    <div class="header_img">
+                        <img id="profile-img" class="profile-img-card profile-img-card"
+                            style="max-width: 180px; max-height: 70px;" src="../../assets/img/foto123.jpeg">
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+
+
+
+                <div class="container">
+                    <div class="card-body ">
+                        <h4 class="text-center">
+                            <strong>PLATAFORMA VIRTUAL SGSST</strong>
+                        </h4>
+
+                        <!--div class="alert alert-success" th:if="${success != null}" th:text="${success}"></div>
+                        <div class="alert alert-danger" th:if="${error != null}" th:text="${error}"></div>
+                        <div class="alert alert-warning" th:if="${warning != null}" th:text="${warning}"></div>
+                        <div class="alert alert-info" th:if="${info != null}" th:text="${info}"></div-->
+
+                        <form th:action="@{/login}" method="post" id="loginForm" class="form-signin text-center mb-3">
+                            <h5 class="text-center">Usuario</h5>
+                            <div class="input-group mb-3">
+
+                                <input autocomplete="off" class="form-control alert-secondary" type=" text"
+                                    name="username" autofocus required>
+                            </div>
+                            <h5 class="text-center">Contraseña</h5>
+                            <div class="input-group mb-4 ">
+
+
+                                <input class="form-control alert-secondary" type="password" name="password"
+                                    id="password" required>
+                            </div>
+                            <div class="row ">
+                                <div class="" style="margin: auto;">
+                                    <button type="submit" form="loginForm"
+                                        class="btn btn-lg btn-danger btn-block bg-primary  btn-signin"
+                                        style="margin: auto; width: 200px;background:#ff4c00!important">Ingresar</button>
+                                </div>
+
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <footer class="footer text-center container">
+
+                    <hr>
+                    <span class="text-muted form-text">Preventiva © 2021 - Todos los derechos reservados.</span>
+                    <br>
+                    <span class=" form-text">
+
+                    </span>
+                    <span class="text-center text-muted">Términos, condiciones y políticas de privacidad</span>
+
+                    <br>
+                    <img id="profile-img-mini" src="../../assets/img/foto123.jpeg" style="max-width:35px">
+
+                </footer>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>

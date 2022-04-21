@@ -1,0 +1,106 @@
+<body>
+    <app-detalle *ngIf="empleadoSeleccionado" [empleado]="empleadoSeleccionado"></app-detalle>
+
+
+    <div class="container-fluid">
+
+        <div class="card-body text-primary">
+            <h1 class="card-title">Listado de empleados</h1>
+            <div class="my-2 text-left">
+                <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/empleados/form']">Nuevo
+                    Empleado</button>
+            </div>
+            <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"
+                class="table table-responsive table-striped table-hover table-sm content-table">
+
+                <thead>
+                    <tr>
+                        <th>Detalle</th>
+                        <th>ID</th>
+                        <th>Primer Nombre</th>
+                        <th>Otros Nombres</th>
+                        <th>Primer Apellido</th>
+                        <th>Segundo Apellido</th>
+                        <th>Nacionalidad</th>
+                        <th>Tipo Identi.</th>
+                        <th>Numero Ident.</th>
+                        <th>Email</th>
+                        <th>Fech. Registro</th>
+                        <th>Estado</th>
+                        <th>Opciones</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    <tr *ngIf="empleados?.length==0">
+
+                        <td class="text-center" colspan="7">No hayhay registros en la base de datos!</td>
+
+                    </tr>
+
+
+                    <tr *ngFor="let  empleado of empleados" class="active-row">
+
+                        <td><a class="btn  btn-outline-success btn-sm " *ngIf="empleado.toggle==0"
+                                routerLinkActive="active" routerLink="/empleados"
+                                (click)="toggleOn(empleado.primerNombre)"><i class="fa fa-plus"></i></a>
+                            <a class="btn  btn-outline-success btn-sm " *ngIf="empleado.toggle==1"
+                                routerLinkActive="active" routerLink="/empleados"
+                                (click)="toggleOff(empleado.primerNombre)"><i class="fa fa-minus"></i></a>
+
+
+                            <a class="btn  btn-outline-success btn-sm " (click)="abrirModal(empleado)"><i
+                                    class="fa fa-eye"></i></a>
+                        </td>
+                        <td>{{empleado.id}}</td>
+                        <td>{{empleado.primerNombre}}</td>
+                        <td>{{empleado.otrosNombres}}</td>
+                        <td>{{empleado.primerApellido}}</td>
+                        <td>{{empleado.segundoApellido}}</td>
+                        <td>{{empleado.nacionalidad}}</td>
+                        <td>{{empleado.tipoIdentificacion}}</td>
+                        <td>{{empleado.dni}}</td>
+                        <td>{{empleado.email}}</td>
+                        <td>{{empleado.createAt}}</td>
+                        <td>
+                            <button class="btn btn-warning btn-sm">{{empleado.enabled}}</button>
+                        </td>
+                        <td>
+                            <a class="btn btn-primary btn-sm " [routerLink]="['/empleados/form',empleado.id]"><span
+                                    class="fa fa-edit" title="Editar">
+                                </span></a>
+
+                            <a class="btn btn-danger btn-sm" (click)='eliminarEmpleado(empleado)'><span
+                                    class="fa fa-trash" title="Eliminar">
+                                </span></a>
+
+                        </td>
+
+
+
+
+                    </tr>
+
+                </tbody>
+                <tfoot *ngFor="let  empleado of empleados">
+                    <ng-container *ngIf="empleado.toggle==1">
+                        <td COLSPAN=6><strong>Id: </strong> {{empleado.id}} <strong>Nombre: </strong>
+                            {{empleado.primerNombre}}
+
+                            <strong>Fecha Ingreso: </strong> {{empleado.fecha_ingreso}}
+                            <strong>Creado: </strong> {{empleado.createAt}}
+
+                            <strong>Editado: </strong> {{empleado.updateAt}}
+
+                        </td>
+                    </ng-container>
+                </tfoot>
+
+
+
+            </table>
+
+        </div>
+    </div>
+</body>

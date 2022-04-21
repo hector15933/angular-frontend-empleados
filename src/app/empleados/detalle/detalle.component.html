@@ -1,0 +1,43 @@
+<div *ngIf="modalService.modal" class="modal" tabindex="-1" style="display: block;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Detalle Empleado</h5>
+                <button (click)="cerrarModal()" type="button" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm">
+                            <!--ul class="list-group" *ngIf="empleado">
+                                <li class="list-group-item">{{empleado.primerNombre}}</li>
+                                <li class="list-group-item">{{empleado.primerApellido}}</li>
+                                <li class="list-group-item">{{empleado.fecha_ingreso | date:"fullDate"}}</li>
+                                <li class="list-group-item">{{empleado.foto}}</li>
+                                <li class="list-group-item">{{empleado.email}}</li>
+                            </ul-->
+
+                            <div class="input-group">
+                                <input (change)="seleccionarFoto($event)" type="file" class="form-control"
+                                    id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                                <button (click)="subirFoto()" class="btn btn-outline-secondary" type="button"
+                                    id="inputGroupFileAddon04">Button</button>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <img *ngIf="empleado?.foto"
+                                src="http://localhost:8080/api/empleados/uploads/img/{{empleado.foto}}"
+                                class="img-thumbnail rounded">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button (click)="cerrarModal()" type="button" class="btn btn-secondary"
+                    data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

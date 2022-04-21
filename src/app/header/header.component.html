@@ -1,0 +1,292 @@
+<header>
+    <div class="app-header navbar">
+        <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+
+        <a class="navbar-brand" href="#"> <img class="navbar-brand-full"
+                src="../uploads/111cb499-dbde-4ce6-a1f8-8592ae3b0b79_foto123.jpeg" width="80px" alt="CoreUI Logo"> <img
+                class="navbar-brand-minimized" src="/img/brand/sygnet.svg" width="30" height="30" alt="CoreUI Logo">
+        </a>
+        <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <ul class="nav navbar-nav d-md-down-none">
+
+            <li class="nav-item px-3"><a class="nav-link" href="/empresa/listar">Empresa</a>
+            </li>
+            <li class="nav-item px-3"><a class="nav-link" href="/principal">Inicio</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav ml-auto">
+
+            <li class="nav-item dropdown"><a class=" btn btn-warning btn-sm dropdown-toggle text-white" href="#"
+                    id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="true" style="background: #f19a1f;"> <i
+                        class="fa fa-cog"></i><strong>Administracion</strong>
+                </a>
+                <div class="dropdown-menu dropdown " aria-labelledby="navbarDropdownMenuLink"
+                    style="max-height: 600px; overflow:scroll;">
+                    <div class="dropdown-header ">
+                        <i class="fa fa-bars"></i> <strong>Administrar Modulos</strong>
+                    </div>
+                    <a class="dropdown-item" href="/programaAnual/listar">Gestión de Actividades</a>
+                    <a class="dropdown-item" href="/lineaBase/listar">Modulo Auditoria</a>
+                    <a class="dropdown-item" href="/requisitosLegales/listar">Matriz Requisitos Legales</a>
+                    <a class="dropdown-item" href="/GestionIncidentes/listar">Gestión de Incidentes</a>
+                    <a class="dropdown-item" href="/salud-ocupacional/listar">Salud Ocupacional</a>
+                    <a class="dropdown-item" href="/registro-enfermedad-ocupacional/listar">Registro enfermedad
+                        Ocupacional</a>
+                    <a class="dropdown-item" href="/terceros/listar">Administracion dee Terceros</a>
+                    <!--<a class="dropdown-item" th:href="@{/admin/empleados}">Dotacion/Trabajadores</a>	
+                    <a class="dropdown-item" th:href="@{/admin/usuarios}">Usuarios</a-->
+                    <div class="dropdown-header ">
+                        <i class="fa fa-bars"></i> <strong>Administrar documentos</strong>
+                    </div>
+                    <a class="dropdown-item" href="/documento/listar">Documentos</a>
+                    <a class="dropdown-item" href="/documento/areaDocumento/listar">Area del documento</a>
+                    <a class="dropdown-item" href="/documento/alcanceDocumento/listar">Alcance Documentos</a>
+                    <a class="dropdown-item" href="/documento/tipoDocumento/listar">Tipo Documentos</a>
+
+                    <a class="dropdown-item" href="/documento/listar">Documentos</a>
+
+                    <div class="dropdown-header ">
+                        <i class="fa fa-bars"></i> <strong>Administrar Personas</strong>
+                    </div>
+                    <a class="dropdown-item" href="/admin/cargo/listar">Cargo</a>
+                    <a class="dropdown-item" href="/admin/empleados">Dotacion/Trabajadores</a>
+                    <a class="dropdown-item" href="/admin/usuarios">Usuarios</a>
+
+                    <div class="dropdown-header "><i class="fa fa-bars"></i>
+                        <strong>Administrar Instalaciones y Proceso</strong>
+                    </div>
+                    <a class="dropdown-item" href="/admin/sede/listar">Gerencia /Sede</a>
+                    <a class="dropdown-item" href="/admin/area/listar">Area/Lugar de Trabajo</a>
+
+                    <div class="dropdown-header "><i class="fa fa-bars"></i>
+                        <strong>Planificacion de Actividades</strong>
+                    </div>
+                    <a class="dropdown-item" href="/admin/objetivo/listar">Administrar Objetivos</a>
+                    <a class="dropdown-item" href="/admin/programaActividad/listar">Administrar Programas de trabajo</a>
+                    <a class="dropdown-item" href="/admin/etiqueta/listar">Administrar Etiquetas</a>
+
+                    <div class="dropdown-header "><i class="fa fa-bars"></i>
+                        <strong>Administrar Evaluacion de Riesgos</strong>
+                    </div>
+                    <a class="dropdown-item" href="/riesgos/riesgos">Evento no Deseado</a>
+
+
+                    <!--  div class="dropdown-header "><i class="fa fa-bars"></i>
+                    <strong>Administrar Controles Preventivos</strong>
+                </div>
+                    <a class="dropdown-item" th:href="@{/cargo/listar}">Nivel de Riesgo</a> 
+                    <a class="dropdown-item" th:href="@{/cargo/listar}">Categoria</a> 
+                    <a class="dropdown-item" th:href="@{/cargo/listar}">Listas de verificacion</a> 
+                    <a class="dropdown-item" th:href="@{/cargo/listar}">Preguntas revision AST</a> 
+                    <a class="dropdown-item" th:href="@{/cargo/listar}">Preguntas observacion de conducta</a> 
+                    
+                    <div class="dropdown-header "><i class="fa fa-bars"></i>
+                    <strong>Administrar Gestion de Activos QR</strong>
+                </div>
+                    <a class="dropdown-item" th:href="@{/cargo/listar}">Categoria de activos</a> 
+                    <a class="dropdown-item" th:href="@{/cargo/listar}">Registro de activos</a> 
+                    <a class="dropdown-item" th:href="@{/cargo/listar}">Carga Masiva de activos</a> 
+                    
+                <div class="dropdown-header "><i class="fa fa-bars"></i>
+                    <strong>Administrar Reportes de Cumplimientos PDF</strong>
+                </div>
+                    <a class="dropdown-item" th:href="@{/cargo/listar}">Crear Reportes</a> 
+                    <a class="dropdown-item" th:href="@{/cargo/listar}">Agregar Capitulo a reportes</a> 
+                    <a class="dropdown-item" th:href="@{/cargo/listar}">Agregar Elementos al Capitulo</a-->
+                </div>
+            </li>
+
+
+            <li class="nav-item d-md-down-none"><a class="nav-link">
+                    <i class="icon-location-pin"></i>
+                </a></li>
+            <li class="nav-item dropdown"><a class="nav-link" data-toggle="dropdown" role="button" aria-haspopup="true"
+                    aria-expanded="false"> <img class="img-avatar" src="/img/avatars/9.png"
+                        alt="admin@bootstrapmaster.com">
+                    <span>user123</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+
+                    <div class="dropdown-header text-center">
+                        <strong>Settings</strong>
+                    </div>
+
+                    <a class="dropdown-item" href="/logout"> <i class="fa fa-lock"></i>
+                        Logout
+                    </a>
+
+
+                </div>
+            </li>
+
+            <li class="nav-item d-md-down-none"><a class="nav-link" href="#">
+                </a></li>
+        </ul>
+
+
+        <button class="navbar-toggler aside-menu-toggler d-md-down-none" type="button" data-toggle="aside-menu-lg-show">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <button class="navbar-toggler aside-menu-toggler d-lg-none" type="button" data-toggle="aside-menu-show">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <br />
+
+
+    </div>
+
+
+
+
+
+
+
+</header>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"> <img class="navbar-brand-full" src="../../assets/img/foto123.jpeg"
+                width="80px" alt="Logo-Empresa">
+        </a>
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Empresa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled">Disabled</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav ml-auto">
+
+                <li class="nav-item dropdown"><a class=" btn btn-warning btn-sm nav-link dropdown-toggle text-white"
+                        id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false" style="background: #f19a1f;"> <i
+                            class="fa fa-cog"></i><strong>Administracion</strong>
+                    </a>
+
+                    <div class="dropdown-menu dropdown " aria-labelledby="navbarDropdownMenuLink"
+                        style="max-height: 600px; overflow:scroll;">
+                        <div class="dropdown-header ">
+                            <i class="fa fa-bars"></i> <strong>Administrar Modulos</strong>
+                        </div>
+                        <a class="dropdown-item" th:href="@{/programaAnual/listar}">Gestión de Actividades</a>
+                        <a class="dropdown-item" th:href="@{/lineaBase/listar}">Modulo Auditoria</a>
+                        <a class="dropdown-item" th:href="@{/requisitosLegales/listar}">Matriz Requisitos Legales</a>
+                        <a class="dropdown-item" th:href="@{/GestionIncidentes/listar}">Gestión de Incidentes</a>
+                        <a class="dropdown-item" th:href="@{/salud-ocupacional/listar}">Salud Ocupacional</a>
+                        <a class="dropdown-item" th:href="@{/registro-enfermedad-ocupacional/listar}">Registro
+                            enfermedad Ocupacional</a>
+                        <a class="dropdown-item" th:href="@{/terceros/listar}">Administracion dee Terceros</a>
+                        <!--<a class="dropdown-item" th:href="@{/admin/empleados}">Dotacion/Trabajadores</a>	
+                            <a class="dropdown-item" th:href="@{/admin/usuarios}">Usuarios</a-->
+                        <div class="dropdown-header ">
+                            <i class="fa fa-bars"></i> <strong>Administrar documentos</strong>
+                        </div>
+                        <a class="dropdown-item" th:href="@{/documento/listar}">Documentos</a>
+                        <a class="dropdown-item" th:href="@{/documento/areaDocumento/listar}">Area del documento</a>
+                        <a class="dropdown-item" th:href="@{/documento/alcanceDocumento/listar}">Alcance Documentos</a>
+                        <a class="dropdown-item" th:href="@{/documento/tipoDocumento/listar}">Tipo Documentos</a>
+
+                        <a class="dropdown-item" th:href="@{/documento/listar}">Documentos</a>
+
+                        <div class="dropdown-header ">
+                            <i class="fa fa-bars"></i> <strong>Administrar Personas</strong>
+                        </div>
+                        <a class="dropdown-item" th:href="@{/admin/cargo/listar}">Cargo</a>
+                        <a class="dropdown-item" th:href="@{/admin/empleados}">Dotacion/Trabajadores</a>
+                        <a class="dropdown-item" th:href="@{/admin/usuarios}">Usuarios</a>
+
+                        <div class="dropdown-header "><i class="fa fa-bars"></i>
+                            <strong>Administrar Instalaciones y Proceso</strong>
+                        </div>
+                        <a class="dropdown-item" th:href="@{/admin/sede/listar}">Gerencia /Sede</a>
+                        <a class="dropdown-item" th:href="@{/admin/area/listar}">Area/Lugar de Trabajo</a>
+
+                        <div class="dropdown-header "><i class="fa fa-bars"></i>
+                            <strong>Planificacion de Actividades</strong>
+                        </div>
+                        <a class="dropdown-item" th:href="@{/admin/objetivo/listar}">Administrar Objetivos</a>
+                        <a class="dropdown-item" th:href="@{/admin/programaActividad/listar}">Administrar Programas de
+                            trabajo</a>
+                        <a class="dropdown-item" th:href="@{/admin/etiqueta/listar}">Administrar Etiquetas</a>
+
+                        <div class="dropdown-header "><i class="fa fa-bars"></i>
+                            <strong>Administrar Evaluacion de Riesgos</strong>
+                        </div>
+                        <a class="dropdown-item" th:href="@{/riesgos/riesgos}">Evento no Deseado</a>
+
+
+                        <!--  div class="dropdown-header "><i class="fa fa-bars"></i>
+                            <strong>Administrar Controles Preventivos</strong>
+                        </div>
+                            <a class="dropdown-item" th:href="@{/cargo/listar}">Nivel de Riesgo</a> 
+                            <a class="dropdown-item" th:href="@{/cargo/listar}">Categoria</a> 
+                            <a class="dropdown-item" th:href="@{/cargo/listar}">Listas de verificacion</a> 
+                            <a class="dropdown-item" th:href="@{/cargo/listar}">Preguntas revision AST</a> 
+                            <a class="dropdown-item" th:href="@{/cargo/listar}">Preguntas observacion de conducta</a> 
+                            
+                            <div class="dropdown-header "><i class="fa fa-bars"></i>
+                            <strong>Administrar Gestion de Activos QR</strong>
+                        </div>
+                            <a class="dropdown-item" th:href="@{/cargo/listar}">Categoria de activos</a> 
+                            <a class="dropdown-item" th:href="@{/cargo/listar}">Registro de activos</a> 
+                            <a class="dropdown-item" th:href="@{/cargo/listar}">Carga Masiva de activos</a> 
+                            
+                        <div class="dropdown-header "><i class="fa fa-bars"></i>
+                            <strong>Administrar Reportes de Cumplimientos PDF</strong>
+                        </div>
+                            <a class="dropdown-item" th:href="@{/cargo/listar}">Crear Reportes</a> 
+                            <a class="dropdown-item" th:href="@{/cargo/listar}">Agregar Capitulo a reportes</a> 
+                            <a class="dropdown-item" th:href="@{/cargo/listar}">Agregar Elementos al Capitulo</a-->
+                    </div>
+                </li>
+                <li class="nav-item d-md-down-none"><a class="nav-link" href="#">
+                        <i class="icon-location-pin"></i>
+                    </a></li>
+                <li class="nav-item dropdown"><a class="nav-link" data-toggle="dropdown" role="button"
+                        aria-haspopup="true" aria-expanded="false"> <img class="img-avatar" src="../../assets/img/9.png"
+                            width="35px" height="35px" alt="admin@bootstrapmaster.com">
+                        <span sec:authorize="isAuthenticated()" sec:authentication="name"></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+
+                        <div class="dropdown-header text-center">
+                            <strong>Settings</strong>
+                        </div>
+
+                        <a class="dropdown-item" th:href="@{/logout}"> <i class="fa fa-lock"></i>
+                            Logout
+                        </a>
+
+
+                    </div>
+                </li>
+                <li class="nav-item d-md-down-none"><a class="nav-link" href="#">
+
+
+                    </a>
+
+                <li class="nav-item d-md-down-none"><a class="nav-link">
+
+
+                    </a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,160 @@
+<div class="card  text">
+    <div class="card-header">{{titulo}}</div>
+
+
+    <div class="card-body">
+        <form #empleadoForm="ngForm" autocomplete="false">
+            <div class="form-group row">
+
+
+                <div class="col-sm-6">
+                    <label for="primerNombre" class="col-form-label ">Primer Nombre</label>
+                    <input autocomplete="off" type="text" class="form-control" [(ngModel)]="empleado.primerNombre"
+                        name="primerNombre" required minlength="2" maxlength="20" #primerNombre="ngModel"
+                        oninput="this.value = this.value.toUpperCase()" pattern="^[A-Z ]+">
+                    <small class="text-danger"
+                        *ngIf="primerNombre.invalid && (primerNombre.dirty || primerNombre.touched)">
+                        <small *ngIf="primerNombre.errors.required">
+                            Este campo es requerido
+                        </small>
+                        <small *ngIf="primerNombre.errors?.pattern">
+                            Nombre debe tener solo mayusculas
+                        </small>
+                        <div *ngIf="primerNombre.errors.maxlength">
+                            Nombre sobrepasa los 20 caracteres
+                        </div>
+                    </small>
+
+                </div>
+                <div class="col-sm-6 ">
+                    <label for="otrosNombres" class="col-form-label">Otros Nombres</label>
+                    <input autocomplete="off" type="text" class="form-control" [(ngModel)]="empleado.otrosNombres"
+                        name="otrosNombres" maxlength="50" #otrosNombres="ngModel"
+                        oninput="this.value = this.value.toUpperCase() " pattern="^[A-Z ]+" maxlength="20">
+                    <small class="text-danger"
+                        *ngIf="otrosNombres.invalid && (otrosNombres.dirty || otrosNombres.touched)">
+                        <small *ngIf="otrosNombres.errors?.pattern">
+                            Nombre debe tener solo mayusculas
+                        </small>
+                        <div *ngIf="otrosNombres.errors.maxlength">
+                            Nombre sobrepasa los 20 caracteres
+                        </div>
+                    </small>
+
+                </div>
+                <div class="col-sm-6 ">
+                    <label for="primerApellido" class="col-form-label">Primer Apellido </label>
+                    <input autocomplete="off" type="text" class="form-control" [(ngModel)]="empleado.primerApellido"
+                        name="primerApellido" required #primerApellido="ngModel"
+                        oninput="this.value = this.value.toUpperCase()" pattern="^[A-Z ]+" maxlength="20">
+                    <small class="text-danger"
+                        *ngIf="primerApellido.invalid && (primerApellido.dirty|| primerApellido.touched)">
+                        <small *ngIf="primerApellido.errors.required">
+                            Este campo es requerido
+                        </small>
+                        <small *ngIf="primerApellido.errors?.pattern">
+                            Nombre debe tener solo letras mayusculas
+                        </small>
+                    </small>
+                </div>
+                <div class="col-sm-6 ">
+                    <label for="apellido" class="col-form-label">Segundo Apellido </label>
+                    <input autocomplete="off" type="text" class="form-control" [(ngModel)]="empleado.segundoApellido"
+                        name="segundoApellido" #segundoApellido="ngModel"
+                        oninput="this.value = this.value.toUpperCase()" pattern="^[A-Z ]+" maxlength="20">
+                    <small class="text-danger"
+                        *ngIf="segundoApellido.invalid && (segundoApellido.dirty|| segundoApellido.touched)">
+                        <small *ngIf="segundoApellido.errors?.pattern">
+                            Solo letras mayusculas
+                        </small>
+                    </small>
+                </div>
+                <div class="col-sm-6 ">
+                    <label for="nacionalidad" class="col-form-label ">Nacionalidad</label>
+                    <mat-form-field appearance="fill" class="w-100">
+                        <mat-label>Seleccione</mat-label>
+                        <mat-select class="w-100" name="nacionalidad" required [(ngModel)]="empleado.nacionalidad"
+                            #nacionalidad="ngModel">
+                            <mat-option *ngFor="let food of nacionalidades" [value]="food.value">
+                                {{food.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <small class="text-danger"
+                        *ngIf="nacionalidad.invalid && (nacionalidad.dirty || nacionalidad.touched)">
+                        <small *ngIf="nacionalidad.errors.required">
+                            Este campo es requerido
+                        </small>
+                    </small>
+                </div>
+                <div class="col-sm-6 ">
+                    <label for="tipoIdentificacion" class="col-form-label ">Tipo de Identificacion</label>
+                    <mat-form-field appearance="fill" class="w-100">
+                        <mat-label>Seleccione</mat-label>
+                        <mat-select class="w-100" name="tipoIdentificacion" required
+                            [(ngModel)]="empleado.tipoIdentificacion" #nacionalidad="ngModel">
+                            <mat-option *ngFor="let food of tipoIdentificacion" [value]="food.value">
+                                {{food.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <small class="text-danger"
+                        *ngIf="nacionalidad.invalid && (nacionalidad.dirty || nacionalidad.touched)">
+                        <small *ngIf="nacionalidad.errors.required">
+                            Este campo es requerido
+                        </small>
+                    </small>
+                </div>
+                <div class="col-sm-6 ">
+                    <label for="dni" class="col-form-label ">Numero Identificacion</label>
+                    <input autocomplete="off" type="text" class="form-control" [(ngModel)]="empleado.dni" name="dni"
+                        required maxlength="20" #dni="ngModel" pattern="^[a-zA-Z0-9]*">
+                    <small class="text-danger" *ngIf="dni.invalid && (dni.dirty || dni.touched)">
+                        <small *ngIf="dni.errors.required">
+                            Este campo es requerido
+                        </small>
+                        <div *ngIf="dni.errors.maxlength">
+                            Dni debe tener 20 caracteres
+                        </div>
+                        <small *ngIf="dni.errors?.pattern">
+                            solo letras mayusculas , minusculas o numeros asegurese de no incluir espacios
+                        </small>
+                    </small>
+
+                </div>
+                <div class="col-sm-6 " *ngIf="!empleado.id ">
+
+                    <label for="fecha_ingreso" class="col-form-label ">Fecha Ingreso
+                        <mat-datepicker-toggle [for]="miDatepicker2"></mat-datepicker-toggle>
+                        <mat-datepicker #miDatepicker2></mat-datepicker>
+                    </label>
+                    <br>
+                    <input [matDatepicker]="miDatepicker2" class="form-control" [(ngModel)]="empleado.fecha_ingreso"
+                        #fecha_ingreso="ngModel" name="fecha_ingreso" matInput [min]="minDate" [max]="maxDate">
+                    <small class="text-danger"
+                        *ngIf="fecha_ingreso.invalid && (fecha_ingreso.dirty || fecha_ingreso.touched)">
+                        <small *ngIf="fecha_ingreso.errors.matInput">
+                            La fecha de ingreso no debe ser menor a 30 al dia de hoy
+                        </small>
+
+                    </small>
+
+                </div>
+
+                <div class=" form-group">
+                    <br>
+                    <div class="col-sm-12">
+                        <button class="btn btn-primary" role="button" (click)='create()'
+                            *ngIf="!empleado.id else elseBlock" [disabled]="!empleadoForm.form.valid">Guardar1</button>
+
+                        <ng-template #elseBlock>
+                            <button class="btn btn-primary" role="button" (click)='update()'
+                                [disabled]="!empleadoForm.form.valid">Guardar</button>
+                        </ng-template>
+
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

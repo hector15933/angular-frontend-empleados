@@ -1,0 +1,64 @@
+.header_empresa {
+	padding: 3.5em;
+	height: 2em;
+	background: #1985ac;
+	padding-left: 10%;
+	padding-right: 10%;
+	box-shadow: 0px 3px 5px #888;
+}
+
+.header_empresa {
+	background-color: #ff4c00;	
+}
+
+.header_img {
+	background-color: #ff4c00;
+}
+
+.header_img {
+	margin: 0 auto;
+	width: 230px;
+	height: 90px;
+	border-bottom-left-radius: 0.5em;
+	border-bottom-right-radius: 0.5em;
+	box-shadow: 0 3px 6px -2px #1d1d1d;
+	align-items: center;
+	justify-content: center;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: flex;
+}
+
+.profile-img-card {
+	margin: 0 auto 10px;
+	display: block;
+	border-radius: .5em;
+	background: #D1D1D1;
+}
+
+.profile-img-card {
+	margin: 0 auto 10px;
+	display: block;
+	border-radius: .5em;
+	background: #D1D1D1;
+}
+
+.profile-img-card {
+	background-color: #E52320;
+}
+
+.img-fluid {
+	height: 100vh !important;
+	width: 100%;
+}
+
+body.swal2-height-auto {
+	height: auto !important;
+}
+
+@media ( max-width : 767px) {
+	.hidden-xs {
+		display: none !important;
+	}
+}
